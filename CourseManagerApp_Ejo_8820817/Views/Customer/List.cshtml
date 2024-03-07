@@ -1,0 +1,87 @@
+﻿@model CustomersViewModel
+
+<!-- Link to Add a New Customer -->
+<div class="col-md-6">
+    <a asp-controller="Customer" asp-action="GetAddNewCustomerForm" asp-route-group="@Model.Group" class="btn btn-primary">Add New Customer</a>
+</div>
+
+<!-- Undo Message -->
+@{
+    if (TempData["UndoCustomerId"] != null)
+    {
+        int deletedId = int.Parse(TempData["UndoCustomerId"].ToString());
+        Customer deledtedCus = null;
+        @foreach (var customer in Model.Customers)
+        {
+            if (customer.CustomerId == deletedId)
+            {
+                deledtedCus = customer;
+                break;
+            }
+        }
+
+        if ((deletedId != null) && (deledtedCus != null))
+        {
+            <div class="col-md-6">
+                The customer "@deledtedCus.Name" was deleted.
+                <a asp-controller="Customer" asp-action="UndoDelete"
+                   asp-route-id="@TempData["UndoCustomerId"]" asp-route-group="@Model.Group">Undo this delete.</a>
+            </div>
+        }
+
+    }
+
+}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Table of Customers -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var customer in Model.Customers)
+                    {
+                        @if (!customer.IsDeleted)
+                        {
+                            <tr>
+                                <td>@customer.Name</td>
+                                <td>@customer.Address1</td>
+                                <td>
+                                    <!-- Invoices Link -->
+                                    <a asp-controller="Customer" asp-action="GetCustomerInvoicesById" asp-route-id="@customer.CustomerId" asp-route-group="@Model.Group" class="btn btn-info">Invoices</a>
+
+                                    <!-- Edit Link -->
+                                    <a asp-controller="Customer" asp-action="GetEditFormById" asp-route-id="@customer.CustomerId" asp-route-group="@Model.Group" class="btn btn-warning">Edit</a>
+
+                                    <!-- Delete Link -->
+                                    <a asp-controller="Customer" asp-action="GetDeleteCustomerById" asp-route-id="@customer.CustomerId" asp-route-group="@Model.Group" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <!-- Group Links -->
+            <div class="my-3">
+                @foreach (var group in new[] { "A-E", "F-K", "L-R", "S-Z" })
+                {
+
+                    <a asp-controller="Customer" asp-action="GetCustomerByGroup" asp-route-group="@group"
+                       class="btn btn-outline-primary @(Model.Group == group ? "active" : "")">
+                        @group
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

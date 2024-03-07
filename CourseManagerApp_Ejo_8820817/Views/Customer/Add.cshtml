@@ -1,0 +1,16 @@
+﻿@model CustomerToManageModel
+
+<h2>Add A Customer</h2>
+
+<form asp-action="ProcessAddRequest" asp-route-group="@ViewData["CurrentGroup"]" method="post">
+    @Html.Partial("_CustomerFormFields", Model)
+
+    <!-- Add/Cancel Button -->
+    <div>
+        <button type="submit" class="btn btn-primary">Add Customer</button>
+        <a asp-controller="Customer" asp-action="GetCustomerByGroup" asp-route-group="@ViewData["CurrentGroup"]" class="btn btn-primary">Cancel</a>
+    </div>
+
+</form>
+
+

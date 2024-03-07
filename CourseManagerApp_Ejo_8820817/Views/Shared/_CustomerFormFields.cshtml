@@ -1,0 +1,115 @@
+﻿@model CustomerToManageModel
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+
+            @{
+                var nameValidationErrors = ViewData.ModelState["ActiveCustomer.Name"]?.Errors;
+                var isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+
+            <label asp-for="ActiveCustomer.Name">Name:</label>
+            <span asp-validation-for="ActiveCustomer.Name" class="text-danger"></span>
+            <input asp-for="ActiveCustomer.Name" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+
+        </div>
+
+        <div class="form-group">
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.Address1"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+            <label asp-for="ActiveCustomer.Address1">Address Line 1:</label>
+            <span asp-validation-for="ActiveCustomer.Address1" class="text-danger"></span>
+            <input asp-for="ActiveCustomer.Address1" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ActiveCustomer.Address2">Address Line 2:</label>
+            <input asp-for="ActiveCustomer.Address2" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.City"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+            <label asp-for="ActiveCustomer.City">City:</label>
+            <span asp-validation-for="ActiveCustomer.City" class="text-danger"></span>
+            <input asp-for="ActiveCustomer.City" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.ProvinceOrState"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+            <label asp-for="ActiveCustomer.ProvinceOrState">Province/State:</label>
+            <span asp-validation-for="ActiveCustomer.ProvinceOrState" class="text-danger"></span>
+
+            <input asp-for="ActiveCustomer.ProvinceOrState" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+        </div>
+
+        <div class="form-group">
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.ZipOrPostalCode"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+            <label asp-for="ActiveCustomer.ZipOrPostalCode">Zip/Postal Code:</label>
+            <span asp-validation-for="ActiveCustomer.ZipOrPostalCode" class="text-danger"></span>
+
+            <input asp-for="ActiveCustomer.ZipOrPostalCode" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+        </div>
+
+        <div class="form-group">
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.Phone"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+
+            <label asp-for="ActiveCustomer.Phone">Phone:</label>
+            <span asp-validation-for="ActiveCustomer.Phone" class="text-danger"></span>
+            <input asp-for="ActiveCustomer.Phone" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+        </div>
+
+        <div class="form-group">
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.ContactLastName"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+
+            <label asp-for="ActiveCustomer.ContactLastName">Contact Last Name:</label>
+            <span asp-validation-for="ActiveCustomer.ContactLastName" class="text-danger"></span>
+
+            <input asp-for="ActiveCustomer.ContactLastName" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+        </div>
+
+        <div class="form-group">
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.ContactFirstName"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+
+            <label asp-for="ActiveCustomer.ContactFirstName">Contact First Name:</label>
+            <span asp-validation-for="ActiveCustomer.ContactFirstName" class="text-danger"></span>
+            <input asp-for="ActiveCustomer.ContactFirstName" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+        </div>
+
+        <div class="form-group">
+            @{
+                nameValidationErrors = ViewData.ModelState["ActiveCustomer.ContactEmail"]?.Errors;
+                isNameInvalid = nameValidationErrors != null && nameValidationErrors.Any();
+            }
+            <label asp-for="ActiveCustomer.ContactEmail">Contact Email:</label>
+            <span asp-validation-for="ActiveCustomer.ContactEmail" class="text-danger"></span>
+            <input asp-for="ActiveCustomer.ContactEmail" class="form-control @(isNameInvalid ? "is-invalid bg-warning" : "") " />
+        </div>
+        <!-- Add a hidden form field that contains the customer's ID:' -->
+        <input type="hidden" asp-for="ActiveCustomer.CustomerId" />
+    </div>
+</div>

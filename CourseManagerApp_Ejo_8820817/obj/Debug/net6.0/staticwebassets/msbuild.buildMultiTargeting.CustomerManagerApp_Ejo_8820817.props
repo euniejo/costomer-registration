@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CustomerManagerApp_Ejo_8820817.props" />
+</Project>

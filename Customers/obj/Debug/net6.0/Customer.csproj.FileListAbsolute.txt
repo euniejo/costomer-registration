@@ -1,0 +1,11 @@
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\bin\Debug\net6.0\Customer.deps.json
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\bin\Debug\net6.0\Customer.dll
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\bin\Debug\net6.0\Customer.pdb
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\Customer.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\Customer.AssemblyInfoInputs.cache
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\Customer.AssemblyInfo.cs
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\Customer.csproj.CoreCompileInputs.cache
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\Customer.dll
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\refint\Customer.dll
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\Customer.pdb
+D:\WebTech\Assignment\Problem_assignment3\Problem_assignment3\Customers\obj\Debug\net6.0\ref\Customer.dll
